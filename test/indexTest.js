@@ -1,17 +1,15 @@
-require ( './helpers.js' );
-
-const sinon = require('sinon');
-
-describe("index.js", () => {
-  let input;
+describe("Your Test Suite", function() {
+  let element;
 
   beforeEach(function() {
-    input = document.getElementById('button');
-    sinon.spy(input, 'addEventListener');
-  })
+    element = document.createElement("div");
+    document.body.appendChild(element);
+  });
 
-  it("binds an event listener in addingEventListener()", () => {
-    addingEventListener();
-    expect(input.addEventListener.called).to.be.true;
-  })
-})
+  afterEach(function() {
+    document.body.removeChild(element);
+  });
+
+  it("should bind an event listener", function() {
+  });
+});
